@@ -1,0 +1,13 @@
+{
+  "name": "takielias/posui",
+  "description": "A simple package for adding pos ui",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "takielias",
+      "email": "taki.elias@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {}
+}
