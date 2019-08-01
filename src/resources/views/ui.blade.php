@@ -10,7 +10,7 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet"
-          href="{{asset('public/vendor/takielias/posui/plugins/bootstrap/dist/css/bootstrap.min.css')}}">
+          href="{{asset('public/vendor/takielias/posui/plugins/bootstrap/css/bootstrap.min.css')}}">
 <style>
     .typeahead, .tt-query, .tt-hint {
         width: 310px;
@@ -309,9 +309,9 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="{{asset('public/vendor/takielias/posui/plugins/jquery/dist/jquery.min.js')}}"></script>
+<script src="{{asset('public/vendor/takielias/posui/plugins/jquery/jquery-3.4.1.min.js')}}"></script>
 
-<script src="{{asset('public/vendor/takielias/posui/plugins/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('public/vendor/takielias/posui/plugins/bootstrap/js/bootstrap.min.js')}}"></script>
 
 <script src="{{asset('public/vendor/takielias/posui/plugins/typeahead.js/typeahead.bundle.js')}}"></script>
 
