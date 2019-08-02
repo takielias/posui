@@ -6,24 +6,25 @@
     </td>
     <td width="10%">
         <div class="input-group col-md-12">
-            <input type="number" id="quantity-{{$item->id}}" name="quantity" value="1" class="form-control">
+            <input type="number" id="item-quantity-{{$item->id}}" name="item_quantity[0]" value="1" class="form-control"
+                   onchange="totalCount()">
         </div>
     </td>
     <td width="12%">
         <div class="input-group col-md-12">
-            <input type="text" id="product-price-{{$item->id}}" name="product_price[0]" value="{{$item->product_price}}"
+            <input type="text" id="item-price-{{$item->id}}" name="item_price[0]" value="{{$item->product_price}}"
                    class="form-control">
         </div>
     </td>
     <td width="10%">
         <div class="input-group col-md-10">
-            <input type="text" id="product-discount-{{$item->id}}" name="discount" value="0.00" class="form-control"
+            <input type="text" id="item-discount-{{$item->id}}" name="discount[0]" value="0.00" class="form-control"
                    readonly="">
         </div>
     </td>
     <td width="17%">
         <div class="input-group col-md-10">
-            <input type="text" id="product-total-{{$item->id}}" name="total" value="{{$item->product_price}}"
+            <input type="text" id="item-total-{{$item->id}}" name="item_total[0]" value="{{$item->product_price}}"
                    class="form-control"
                    readonly="">
         </div>
@@ -41,4 +42,20 @@
         $("#ps").val('');
         totalCount();
     });
+
+    function totalCount() {
+        var priceElement = $('input[name*="item_price"]');
+        var quantityElement = $('input[name*="item_quantity"]');
+        var totalElement = $('input[name*="item_total"]');
+        var total = 0;
+        for (i = 0; i < totalElement.length; i++) {
+            total = parseFloat(total) + parseFloat($(priceElement[i]).val() * $(quantityElement[i]).val());
+            totalElement[i].val(total)
+        }
+
+        $("#invoice-sub-total").html(total.toFixed(2));
+        $("#invoice-total").html(total.toFixed(2));
+        $("#invoice-pay").val(total.toFixed(2));
+        $("#pay-note").val(total.toFixed(2));
+    }
 </script>

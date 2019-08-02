@@ -16,6 +16,7 @@ class CreatePosuisTable extends Migration
         Schema::create('posuis', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('product_name');
+            $table->integer('product_code');
             $table->double('product_price', 9, 2);
             $table->string('product_image')->nullable();
             $table->integer('product_quantity')->default(1);

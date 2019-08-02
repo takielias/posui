@@ -3,11 +3,11 @@ Route::get('posui', [
     'as' => 'posui',
     'uses' => 'Takielias\Posui\PosuiController@getView'
 ]);
-Route::get('posuisearch', [
-    'as' => 'posuisearch',
-    'uses' => 'Takielias\Posui\PosuiController@search'
+Route::get('posui-item-search', [
+    'as' => 'posui.item.search',
+    'uses' => 'Takielias\Posui\PosuiController@searchItem'
 ]);
-Route::get('posuisingleitem', [
-    'as' => 'posuisingleitem',
-    'uses' => 'Takielias\Posui\PosuiController@singleItem'
+Route::get('posui-get-single-item', [
+    'as' => 'posui.get.single.item',
+    'uses' => 'Takielias\Posui\PosuiController@getSingleItem'
 ]);

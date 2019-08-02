@@ -2,6 +2,7 @@
 
 namespace Takielias\Posui;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\ServiceProvider;
 
 class PosuiServiceProvider extends ServiceProvider
@@ -29,5 +30,8 @@ class PosuiServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__ . './resources/public/assets/' => public_path('vendor/takielias/posui'),
         ], 'public');
+        $this->publishes([
+            __DIR__ . '/config/posuiconfig.php' => config_path('posuiconfig.php'),
+        ], 'config');
     }
 }

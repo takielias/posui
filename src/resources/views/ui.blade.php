@@ -78,7 +78,7 @@
                             <th>Action</th>
                         </tr>
                         </thead>
-                        <tbody id="product_list">
+                        <tbody id="item_list">
                         </tbody>
                     </table>
 
@@ -242,7 +242,7 @@
             datumTokenizer: Bloodhound.tokenizers.whitespace,
             queryTokenizer: Bloodhound.tokenizers.whitespace,
             remote: {
-                url: '{{route('posuisearch','q=query')}}',
+                url: '{{route('posui.item.search','q=query')}}',
                 wildcard: '%QUERY%',
                 prepare: function (query, settings) {
                     settings.url = settings.url.replace('query', query);
@@ -260,7 +260,7 @@
             source: searchEngine,
             limit: 10,
             display: function (data) {
-                return data.product_name
+                return data.item_name
             },
             templates: {
                 empty: [
@@ -272,37 +272,48 @@
                 suggestion: function (data) {
                     return "" +
                         "<div class=\"ProfileCard u-cf Typeahead-suggestion Typeahead-selectable\">\n" +
-                        "        <img class=\"ProfileCard-avatar\" src=" + data.product_image + ">\n" +
+                        "        <img class=\"ProfileCard-avatar\" src=" + data.item_image + ">\n" +
                         "        <div class=\"ProfileCard-details\">\n" +
-                        "          <div class=\"ProfileCard-realName\"> " + data.product_name + "</div>\n" +
-                        "          <div class=\"ProfileCard-description\"> " + data.product_description + "</div>\n" +
+                        "          <div class=\"ProfileCard-realName\"> " + data.item_name + "</div>\n" +
+                        "          <div class=\"ProfileCard-description\"> " + data.item_description + "</div>\n" +
                         "        </div>\n" +
                         "        <div class=\"ProfileCard-stats\">\n" +
-                        "          <div class=\"ProfileCard-stat\"><span class=\"ProfileCard-stat-label\">Price : </span><b>" + data.product_price + "</b></div>\n" +
-                        "          <div class=\"ProfileCard-stat\"><span class=\"ProfileCard-stat-label\">Available Quantity : </span><b>" + data.product_quantity + "</b></div>\n" +
+                        "          <div class=\"ProfileCard-stat\"><span class=\"ProfileCard-stat-label\">Item Code : </span><b>" + data.item_code + "</b></div>\n" +
+                        "          <div class=\"ProfileCard-stat\"><span class=\"ProfileCard-stat-label\">Price : </span><b>" + data.item_price + "</b></div>\n" +
+                        "          <div class=\"ProfileCard-stat\"><span class=\"ProfileCard-stat-label\">Available Quantity : </span><b>" + data.item_quantity + "</b></div>\n" +
                         "        </div>\n" +
-                        "      </div>"
+                        " </div>"
                 }
             }
         }).on('typeahead:selected', function (obj, itemData) {
             $.ajax({
-                url: "{{route('posuisingleitem')}}",
+                url: "{{route('posui.get.single.item')}}",
                 method: "GET",
                 data: {"id": itemData.id},
                 success: function (data) {
-                    $("#product_list").append(data);
+                    if ($("#tr-" + itemData.id).length) {
+                        $("#item-quantity-" + itemData.id).val(parseInt($("#item-quantity-" + itemData.id).val()) + 1);
+                        $("#item-total-" + itemData.id).val($("#item-quantity-" + itemData.id).val() * $("#item-price-" + itemData.id).val());
+                    } else {
+                        $("#item_list").append(data);
+                    }
                     $('.typeahead').typeahead('val', '');
                     totalCount();
                 },
-                error: function (data) {
+                error: function (error) {
+                    alert('Something Wrong')
                 }
             });
         });
+
         function totalCount() {
-            var salePriceElements = $('input[name*="product_price"]');
+            var priceElement = $('input[name*="item_price"]');
+            var quantityElement = $('input[name*="item_quantity"]');
+            var totalElement = $('input[name*="item_total"]');
             var total = 0;
-            for (i = 0; i < salePriceElements.length; i++) {
-                total = parseFloat(total) + parseFloat($(salePriceElements[i]).val());
+            for (i = 0; i < priceElement.length; i++) {
+                total = parseFloat(total) + parseFloat($(priceElement[i]).val() * $(quantityElement[i]).val());
+//                totalElement[i].val(total)
             }
             $("#invoice-sub-total").html(total.toFixed(2));
             $("#invoice-total").html(total.toFixed(2));
