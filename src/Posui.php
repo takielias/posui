@@ -6,5 +6,4 @@ use Illuminate\Database\Eloquent\Model;
 
 class Posui extends Model
 {
-    protected $table = 'posuis';
 }

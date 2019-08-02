@@ -17,6 +17,9 @@ class CreatePosuisTable extends Migration
             $table->bigIncrements('id');
             $table->string('product_name');
             $table->double('product_price', 9, 2);
+            $table->string('product_image')->nullable();
+            $table->integer('product_quantity')->default(1);
+            $table->string('product_description')->nullable();
             $table->timestamps();
         });
     }
