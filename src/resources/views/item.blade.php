@@ -42,7 +42,6 @@
         $("#ps").val('');
         totalCount();
     });
-
     function totalCount() {
         var priceElement = $('input[name*="item_price"]');
         var quantityElement = $('input[name*="item_quantity"]');
