@@ -11,7 +11,7 @@ composer require takielias/posui
 
 Execute the Command after successful installation. 
 ```sh
-php artisan vendor:publish --tag=public --force`
+php artisan vendor:publish --tag=public --force
 ```
 
 ### Add this To your Header
