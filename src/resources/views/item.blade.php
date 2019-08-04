@@ -49,7 +49,7 @@
         var total = 0;
         for (i = 0; i < totalElement.length; i++) {
             total = parseFloat(total) + parseFloat($(priceElement[i]).val() * $(quantityElement[i]).val());
-            totalElement[i].val(total)
+//            totalElement[i].val(total)
         }
 
         $("#invoice-sub-total").html(total.toFixed(2));
