@@ -13,13 +13,13 @@
   "extra": {
     "laravel": {
       "providers": [
-        "takielias\\posui\\PosuiServiceProvider"
+        "Takielias\\Posui\\PosuiServiceProvider"
       ]
     }
   },
   "autoload": {
     "psr-4": {
-      "takielias\\posui\\": "src/"
+      "takielias\\posui\\": "src"
     }
   }
 }
