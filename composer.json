@@ -1,6 +1,6 @@
 {
   "name": "takielias/posui",
-  "description": "A simple package for adding pos ui",
+  "description": "A simple package for adding POS HTML User Interface",
   "license": "MIT",
   "authors": [
     {
@@ -9,5 +9,17 @@
     }
   ],
   "minimum-stability": "dev",
-  "require": {}
+  "require": {},
+  "extra": {
+    "laravel": {
+      "providers": [
+        "takielias\\posui\\PosuiServiceProvider"
+      ]
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "takielias\\posui\\": "src/"
+    }
+  }
 }
