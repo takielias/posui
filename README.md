@@ -157,7 +157,7 @@ use Takielias\Posui\Posui;
             'item_description' => 'product_description',
             'item_quantity' => 'product_quantity',
         ];
-        $data = Posui::searchItem(PosuiModel::query(), $rt, $request);
+        $data = Posui::searchItem(ItemModel::query(), $rt, $request);
         return response()->json($data);
     }
 ```
@@ -166,6 +166,6 @@ use Takielias\Posui\Posui;
 ```sh
     function singleItem(Request $request)
     {
-        return Posui::getSingleItem(PosuiModel::query(), $request);
+        return Posui::getSingleItem(ItemModel::query(), $request);
     }
 ```
