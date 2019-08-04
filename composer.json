@@ -19,5 +19,12 @@
     "psr-4": {
       "Takielias\\Posui\\": "src/"
     }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "takielias\\posui\\PosuiServiceProvider"
+      ]
+    }
   }
 }

@@ -2,7 +2,6 @@
 
 namespace Takielias\Posui;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\ServiceProvider;
 
 class PosuiServiceProvider extends ServiceProvider
