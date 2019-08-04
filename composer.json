@@ -23,7 +23,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "takielias\\posui\\PosuiServiceProvider"
+        "Takielias\\Posui\\PosuiServiceProvider"
       ]
     }
   }
