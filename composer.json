@@ -1,6 +1,6 @@
 {
   "name": "takielias/posui",
-  "description": "A simple package for adding POS HTML User Interface",
+  "description": "A simple laravel package For Point of Sale User Interface HTML Template",
   "license": "MIT",
   "authors": [
     {
