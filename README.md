@@ -1,7 +1,7 @@
 ![GIt](https://user-images.githubusercontent.com/38932580/62421779-1a73f700-b6c9-11e9-9fdb-26303a3dcdb0.gif)
 
 # Posui
-A simple laravel package For Point of Sale User Interface HTML Template
+A simple laravel package For Point of Sale User Interface HTML Template. Special Thanks to @AzimUddin248
 
 #Installation
 ```sh
