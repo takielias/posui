@@ -8,6 +8,7 @@ A simple laravel package For Point of Sale User Interface
 composer require takielias/posui
 ```
 #Documentation
+
 Execute the Command after successful installation. 
 ```sh
 php artisan vendor:publish --tag=public --force`
