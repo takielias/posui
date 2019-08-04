@@ -161,6 +161,7 @@ use Takielias\Posui\Posui;
         return response()->json($data);
     }
 ```
+**Here product_code, product_name, product_price etc are representing your Item table column name**
 
 ### Select Single Item
 ```sh
