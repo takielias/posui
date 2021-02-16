@@ -1,5 +1,8 @@
 ![GIt](https://user-images.githubusercontent.com/38932580/62421779-1a73f700-b6c9-11e9-9fdb-26303a3dcdb0.gif)
 
+[![Latest Version on Packagist][ico-version]][link-packagist]
+[![Total Downloads][ico-downloads]][link-downloads]
+
 # Posui
 A simple laravel package For Point of Sale User Interface HTML Template. Special Thanks to @AzimUddin248
 
@@ -171,3 +174,10 @@ use Takielias\Posui\Posui;
         return Posui::getSingleItem(ItemModel::query(), $request);
     }
 ```
+
+
+[ico-version]: https://img.shields.io/packagist/v/takielias/posui.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/takielias/posui.svg?style=flat-square
+
+[link-packagist]: https://packagist.org/packages/takielias/posui
+[link-downloads]: https://packagist.org/packages/takielias/posui
