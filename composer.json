@@ -1,30 +1,32 @@
 {
-  "name": "takielias/posui",
-  "description": "A simple laravel package For Point of Sale User Interface HTML Template",
-  "license": "MIT",
-  "keywords": [
-    "pos",
-    "pos ui",
-    "pos html template"
-  ],
-  "authors": [
-    {
-      "name": "takielias",
-      "email": "taki.elias@gmail.com"
+    "name": "takielias/posui",
+    "description": "A simple laravel package For Point of Sale User Interface Template With Search Functionality",
+    "license": "MIT",
+    "keywords": [
+        "pos",
+        "pos ui",
+        "pos html template"
+    ],
+    "authors": [
+        {
+            "name": "Taki Elias",
+            "email": "taki.elias@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "illuminate/support": "^5.0|^6.0|^7.0|^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Takielias\\Posui\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Takielias\\Posui\\PosuiServiceProvider"
+            ]
+        }
     }
-  ],
-  "minimum-stability": "dev",
-  "require": {},
-  "autoload": {
-    "psr-4": {
-      "Takielias\\Posui\\": "src/"
-    }
-  },
-  "extra": {
-    "laravel": {
-      "providers": [
-        "Takielias\\Posui\\PosuiServiceProvider"
-      ]
-    }
-  }
 }
